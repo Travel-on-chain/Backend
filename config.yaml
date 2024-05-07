@@ -1,0 +1,10 @@
+service:
+  name: "Travel on Chain"
+  port: ":8080"
+LogConfig:
+  mode: 1
+EthAddress:
+  url: ""
+mysql:
+
+redis:
