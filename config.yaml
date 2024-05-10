@@ -1,10 +1,10 @@
-service:
+Service:
   name: "Travel on Chain"
   port: ":8080"
 LogConfig:
   mode: 1
 EthAddress:
   url: ""
-mysql:
+Mysql:
 
-redis:
+Redis:

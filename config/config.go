@@ -6,6 +6,11 @@ import (
 	"service/log"
 )
 
+var (
+	ServerPort    string
+	LogConfigMode int
+)
+
 func Init() {
 	// 读取 配置文件
 	viper.SetConfigName("config")
@@ -23,4 +28,9 @@ func Init() {
 			log.Error("The configuration file has been modified.")
 		})
 	return
+}
+
+func LoadConfig() {
+	ServerPort = viper.GetString("server.port")
+	LogConfigMode = viper.GetInt("logConfig.mode")
 }

@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"github.com/spf13/viper"
 	"service/config"
 	"service/log"
 	"service/routers"
@@ -9,7 +8,7 @@ import (
 
 func init() {
 	config.Init()
-	log.Init(log.LogMode(viper.GetInt("LogConfig.mode")))
+	log.Init(log.LogMode(config.LogConfigMode))
 	routers.Init()
 }
 
