@@ -1,7 +1,8 @@
-package cmd
+package main
 
 import (
 	"service/config"
+	"service/dao"
 	"service/log"
 	"service/routers"
 )
@@ -9,7 +10,9 @@ import (
 func init() {
 	config.Init()
 	log.Init(log.LogMode(config.LogConfigMode))
+	dao.Init()
 	routers.Init()
+
 }
 
 func main() {

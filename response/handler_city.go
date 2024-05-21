@@ -6,10 +6,11 @@ import (
 )
 
 func GetCityList(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
+	cityList := logic.
+		c.JSON(http.StatusOK, gin.H{
 		"msg": "success",
 		"data": gin.H{
-			"citylist": "北京,上海,成都,西安,深圳,武汉,哈尔滨",
+			"citylist": cityList,
 		},
 	})
 }
