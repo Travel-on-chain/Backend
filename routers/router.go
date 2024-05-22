@@ -4,7 +4,6 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"service/config"
-	"service/response"
 )
 
 func Init() *gin.Engine {
@@ -17,7 +16,7 @@ func Init() *gin.Engine {
 		AllowCredentials: true, // 允许携带 Cookie
 	}))
 
-	v1 := service.Group("/user")
+	//v1 := service.Group("/user")
 
 	// 登录相关
 	//v1.GET("/login", nil)
@@ -27,7 +26,7 @@ func Init() *gin.Engine {
 	//v1.POST("/location", nil)
 	//v1.GET("/lots", nil)
 	//
-	v1.POST("/citylist", response.GetCityList)
+	//v1.POST("/citylist", response.GetCityList)
 
 	err := service.Run(config.ServerPort)
 	if err != nil {
