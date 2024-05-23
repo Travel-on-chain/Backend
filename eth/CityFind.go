@@ -12,12 +12,12 @@ import (
 
 // 查询链上
 func ContractQueryCityMint(fromAddress common.Address) []string {
-	client, err := ethclient.DialContext(context.Background(), config.EthUrl)
+	client, err := ethclient.DialContext(context.Background(), config.EthApiKeyUrl)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	//privateKey, err := crypto.HexToECDSA("634ae752918922040eba9aefb4ad95521712e1ef0a114ec12d01dd8bd604e2cf")
+	//privateKey, err := crypto.HexToECDSA("privateKey")
 	//if err != nil {
 	//	log.Fatal(err)
 	//}
@@ -37,7 +37,7 @@ func ContractQueryCityMint(fromAddress common.Address) []string {
 	//
 
 	//// 合约地址
-	address := common.HexToAddress("0xc7E3E80ADf70263e3B46B94687828B54cB88ac27")
+	address := common.HexToAddress(config.EthContractUrl)
 	//// 创建合约实例
 	contract, err := citynft.NewCitynft(address, client)
 	if err != nil {

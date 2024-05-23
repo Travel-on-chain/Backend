@@ -7,15 +7,16 @@ import (
 )
 
 var (
-	ServerName    string
-	ServerPort    string
-	LogConfigMode int
-	EthUrl        string
-	MysqlHost     string
-	MysqlPort     int
-	MysqlUser     string
-	MysqlPassword string
-	MysqlDbname   string
+	ServerName     string
+	ServerPort     string
+	LogConfigMode  int
+	EthApiKeyUrl   string
+	EthContractUrl string
+	MysqlHost      string
+	MysqlPort      int
+	MysqlUser      string
+	MysqlPassword  string
+	MysqlDbname    string
 )
 
 func Init() {
@@ -42,7 +43,8 @@ func LoadConfig() {
 	ServerName = viper.GetString("server.name")
 	ServerPort = viper.GetString("server.port")
 	LogConfigMode = viper.GetInt("logConfig.mode")
-	EthUrl = viper.GetString("eth.url")
+	EthApiKeyUrl = viper.GetString("eth.apiKeyUrl")
+	EthContractUrl = viper.GetString("eth.contractUrl")
 	MysqlHost = viper.GetString("mysql.host")
 	MysqlPort = viper.GetInt("mysql.port")
 	MysqlUser = viper.GetString("mysql.user")

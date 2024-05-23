@@ -4,7 +4,8 @@ server:
 logConfig:
   mode: 0     # 0 直接输出到标准输出  1 输出到文件
 eth:
-  url: "0x123456"
+  apiKeyUrl: "0x123456"
+  contractUrl: "0x123456"
 mysql:
   host: "127.0.0.1"
   port: 3306
