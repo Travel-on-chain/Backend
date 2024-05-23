@@ -10,6 +10,7 @@ var (
 	ServerName    string
 	ServerPort    string
 	LogConfigMode int
+	EthUrl        string
 	MysqlHost     string
 	MysqlPort     int
 	MysqlUser     string
@@ -33,6 +34,7 @@ func Init() {
 		func(in fsnotify.Event) {
 			log.Error("The configuration file has been modified.")
 		})
+	LoadConfig()
 	return
 }
 
@@ -40,6 +42,7 @@ func LoadConfig() {
 	ServerName = viper.GetString("server.name")
 	ServerPort = viper.GetString("server.port")
 	LogConfigMode = viper.GetInt("logConfig.mode")
+	EthUrl = viper.GetString("eth.url")
 	MysqlHost = viper.GetString("mysql.host")
 	MysqlPort = viper.GetInt("mysql.port")
 	MysqlUser = viper.GetString("mysql.user")
